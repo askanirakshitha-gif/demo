@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Silkscreen:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  --font-cyber: 'Orbitron', monospace;
+  --font-pixel: 'Silkscreen', monospace;
+  --font-mono: 'Fira Code', monospace;
+
+  --color-black-pure: #000000;
+  --color-dark-950: #040404;
+  --color-dark-900: #090909;
+  --color-dark-850: #111111;
+  --color-dark-800: #18181b;
+  --color-dark-700: #27272a;
+  --color-dark-600: #3f3f46;
+
+  --color-neon-white: #ffffff;
+  --color-silver-100: #f4f4f5;
+  --color-silver-300: #d4d4d8;
+  --color-silver-500: #71717a;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #000000;
+  color: #f4f4f5;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.font-cyber {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* 3D Bold Extruded Typography Effect for TECH HABBA 2026 (Zero Blurriness, High Contrast) */
+.title-3d-white {
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-shadow: 
+    0 1px 0 #ffffff,
+    0 2px 0 #e4e4e7,
+    0 3px 0 #d4d4d8,
+    0 4px 0 #a1a1aa,
+    0 5px 0 #71717a,
+    0 6px 0 #52525b,
+    0 7px 0 #3f3f46,
+    0 8px 0 #27272a,
+    0 9px 0 #18181b,
+    0 12px 24px rgba(0, 0, 0, 0.98),
+    0 24px 48px rgba(0, 0, 0, 0.9),
+    0 0 35px rgba(255, 255, 255, 0.3);
+}
+
+.title-3d-metallic {
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-shadow: 
+    0 1px 0 #ffffff,
+    0 2px 0 #f4f4f5,
+    0 3px 0 #d4d4d8,
+    0 4px 0 #a1a1aa,
+    0 5px 0 #71717a,
+    0 6px 0 #52525b,
+    0 7px 0 #3f3f46,
+    0 8px 0 #27272a,
+    0 12px 24px rgba(0, 0, 0, 0.98),
+    0 24px 48px rgba(0, 0, 0, 0.9);
+}
+
+.text-3d-subtle {
+  text-shadow: 
+    0 1px 0 #a1a1aa,
+    0 2px 0 #52525b,
+    0 3px 0 #27272a,
+    0 5px 12px rgba(0, 0, 0, 0.9);
+}
+
+/* Clean High-Contrast Monochrome Text */
+.neon-text {
+  color: #ffffff;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 255, 255, 0.35);
+}
+
+/* Glassmorphism Black & White */
+.glass-card {
+  background: rgba(14, 14, 16, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 12px 40px -8px rgba(255, 255, 255, 0.12), 0 0 25px rgba(255, 255, 255, 0.08);
+}
+
+/* SaaS Style Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.85rem;
+  font-weight: 700;
+  border-radius: 0.6rem;
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: -0.01em;
+  font-size: 0.925rem;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+}
+
+.btn-primary:hover {
+  background: #f4f4f5;
+  box-shadow: 0 6px 30px rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.85rem;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  background: rgba(24, 24, 27, 0.8);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s ease;
+  letter-spacing: -0.01em;
+  font-size: 0.925rem;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: rgba(39, 39, 42, 0.95);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #71717a;
+}
+
+/* Deep Inky Black Background System */
+.bg-workbench-gradient {
+  background: #000000;
+  background-image: linear-gradient(180deg, #000000 0%, #020202 50%, #050505 100%);
+}
+
+.bg-grid-overlay {
+  background-image: 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.scanline-overlay {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.35) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+}
+
+/* ===================================================
+   SKILLS-INSPIRED STEPPED 5-BAND TITLES & WIREFRAME
+   =================================================== */
+.font-pixel {
+  font-family: 'Silkscreen', 'Orbitron', monospace;
+}
+
+.skills-banded-text {
+  font-family: 'Silkscreen', 'Orbitron', monospace;
+  background-image: linear-gradient(
+    to bottom,
+    #dedede 0%,
+    #dedede 20%,
+    #b8b8b8 20%,
+    #b8b8b8 40%,
+    #8e8e8e 40%,
+    #8e8e8e 60%,
+    #6c6c6c 60%,
+    #6c6c6c 80%,
+    #444444 80%,
+    #444444 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ===================================================
+   UNIVERSAL BOX POP-UP & BORDER BLINKING GLOW ON TOUCH / HOVER
+   =================================================== */
+@keyframes borderBlinkGlow {
+  0%, 100% {
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow: 
+      0 20px 48px -10px rgba(0, 0, 0, 0.95),
+      0 0 35px rgba(255, 255, 255, 0.55),
+      inset 0 0 16px rgba(255, 255, 255, 0.14);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 
+      0 12px 30px -10px rgba(0, 0, 0, 0.85),
+      0 0 14px rgba(255, 255, 255, 0.18),
+      inset 0 0 6px rgba(255, 255, 255, 0.04);
+  }
+}
+
+@keyframes borderBeamRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes linkShineSweep {
+  0% { transform: translateX(-150%) skewX(-25deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(250%) skewX(-25deg); opacity: 0; }
+}
+
+/* Any box or card touchable */
+.event-box-pop,
+.glass-card,
+.box-touchable,
+.interactive-box {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+.event-box-pop:hover,
+.event-box-pop:active,
+.event-box-pop:focus-within,
+.event-box-pop:focus,
+.glass-card:hover,
+.glass-card:active,
+.glass-card:focus-within,
+.box-touchable:hover,
+.box-touchable:active,
+.box-touchable:focus-within,
+.interactive-box:hover,
+.interactive-box:active,
+.interactive-box:focus-within {
+  transform: translateY(-10px) scale(1.025);
+  animation: borderBlinkGlow 1.2s infinite ease-in-out !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  z-index: 20;
+}
+
+.link-shine-pill {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.link-shine-pill:hover,
+.link-shine-pill:active,
+.group:hover .link-shine-pill,
+.group:active .link-shine-pill,
+.event-box-pop:hover .link-shine-pill,
+.event-box-pop:active .link-shine-pill {
+  border-color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), inset 0 0 14px rgba(255, 255, 255, 0.25);
+}
+
+
