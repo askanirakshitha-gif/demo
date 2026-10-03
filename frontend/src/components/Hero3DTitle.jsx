@@ -225,7 +225,7 @@ const Hero3DTitle = ({
         {/* ==============================================================
             2. SOLID 3D METALLIC CHROME TYPOGRAPHY (3-TIER ARRANGEMENT)
             ============================================================== */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center py-2 px-6 leading-none">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center py-2 px-2 sm:px-6 leading-none">
           
           {/* LINE 1: ACHARYA (Sharp Techno Font + Solid Chrome Bevel) */}
           <h1
@@ -239,8 +239,8 @@ const Hero3DTitle = ({
               textShadow: '0 1px 0 #ffffff, 0 2px 0 #cbd5e1, 0 3px 0 #94a3b8, 0 4px 0 #64748b, 0 5px 0 #475569, 0 6px 0 #334155, 0 7px 0 #1e293b, 0 8px 0 #0f172a, 0 12px 24px rgba(0, 0, 0, 0.98)',
             }}
             className="
-              uppercase select-none leading-[0.92] tracking-[0.08em]
-              text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem]
+              uppercase select-none leading-[0.92] tracking-[0.06em] sm:tracking-[0.08em]
+              text-[2.35rem] sm:text-5xl md:text-6xl lg:text-[4.2rem]
               transition-transform duration-150
             "
           >
@@ -259,8 +259,8 @@ const Hero3DTitle = ({
               textShadow: '0 1px 0 #ffffff, 0 2px 0 #cbd5e1, 0 3px 0 #94a3b8, 0 4px 0 #64748b, 0 5px 0 #475569, 0 6px 0 #334155, 0 7px 0 #1e293b, 0 8px 0 #0f172a, 0 14px 28px rgba(0, 0, 0, 0.98)',
             }}
             className="
-              uppercase select-none leading-[0.92] tracking-[0.14em] mt-1 sm:mt-1.5
-              text-4xl sm:text-6xl md:text-7xl lg:text-[5.6rem]
+              uppercase select-none leading-[0.92] tracking-[0.10em] sm:tracking-[0.14em] mt-1 sm:mt-1.5
+              text-[3.15rem] sm:text-6xl md:text-7xl lg:text-[5.6rem]
               transition-transform duration-150
             "
           >
@@ -279,8 +279,8 @@ const Hero3DTitle = ({
               textShadow: '0 1px 0 #ffffff, 0 2px 0 #cbd5e1, 0 3px 0 #94a3b8, 0 4px 0 #64748b, 0 5px 0 #475569, 0 6px 0 #334155, 0 7px 0 #1e293b, 0 8px 0 #0f172a, 0 12px 24px rgba(0, 0, 0, 0.98)',
             }}
             className="
-              uppercase select-none leading-[0.92] tracking-[0.08em] mt-1 sm:mt-1.5
-              text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem]
+              uppercase select-none leading-[0.92] tracking-[0.06em] sm:tracking-[0.08em] mt-1 sm:mt-1.5
+              text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[4.2rem]
               transition-transform duration-150
             "
           >
