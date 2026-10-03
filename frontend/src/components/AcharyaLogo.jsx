@@ -132,17 +132,22 @@ const AcharyaLogo = ({
           }}
         />
 
-        {/* Acharya Official Logo */}
-        <img
-          src="/acharya-logo.png"
-          alt="Acharya Institute of Technology Logo"
-          className="h-20 w-auto object-contain transition-all duration-150"
-          style={{
-            filter: `drop-shadow(0 ${Math.max(6, 12 * scale)}px ${Math.max(12, 24 * scale)}px rgba(255,255,255,${
-              isHovered ? 0.45 : scale > 1 ? 0.35 : 0.18
-            }))`,
-          }}
-        />
+        {/* Acharya Official Logo & Text Lockup */}
+        <div className="flex flex-col items-center justify-center">
+          <img
+            src="/acharya-logo.png"
+            alt="Acharya Institute of Technology Logo"
+            className="h-16 sm:h-20 w-auto object-contain transition-all duration-150"
+            style={{
+              filter: `drop-shadow(0 ${Math.max(6, 12 * scale)}px ${Math.max(12, 24 * scale)}px rgba(255,255,255,${
+                isHovered ? 0.45 : scale > 1 ? 0.35 : 0.18
+              }))`,
+            }}
+          />
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.28em] font-sans font-black text-white mt-1 select-none">
+            ACHARYA
+          </span>
+        </div>
       </motion.div>
     </div>
   );

@@ -126,36 +126,49 @@ const Home = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="max-w-2xl mx-auto px-4 text-center my-auto w-full py-3 sm:py-5"
+            className="max-w-2xl mx-auto px-4 text-center my-auto w-full flex flex-col items-center py-1 sm:py-3"
           >
-            {/* Institution & Date Statement */}
-            <div className="font-mono text-xs sm:text-base md:text-lg tracking-[0.08em] sm:tracking-[0.16em] uppercase text-zinc-300 select-none flex flex-wrap items-center justify-center gap-1 sm:gap-2 mb-3 sm:mb-4">
-              <span className="opacity-40">//</span>
-              <span className="text-white font-bold whitespace-nowrap">ACHARYA INSTITUTE OF TECHNOLOGY</span>
-              <span className="opacity-40">//</span>
-              <span className="text-zinc-300 font-semibold whitespace-nowrap">12 - 15 NOV 2026</span>
-              <span className="opacity-40">//</span>
+            {/* Institution Statement */}
+            <div className="font-mono text-xs sm:text-sm md:text-base tracking-[0.14em] uppercase text-zinc-300 select-none flex items-center justify-center gap-1.5 mb-1 font-bold">
+              <span className="opacity-50 text-cyan-400">//</span>
+              <span className="text-white tracking-widest">ACHARYA INSTITUTE OF TECHNOLOGY</span>
+              <span className="opacity-50 text-cyan-400">//</span>
+            </div>
+
+            {/* Date Statement */}
+            <div className="font-mono text-xs sm:text-sm md:text-base tracking-[0.18em] uppercase text-zinc-300 select-none flex items-center justify-center gap-1.5 mb-3.5 font-semibold">
+              <span className="text-zinc-300">12 - 15 NOV 2026</span>
+              <span className="opacity-50 text-cyan-400">//</span>
             </div>
 
             {/* Inter-Collegiate Statement */}
-            <p className="text-zinc-400 font-mono text-xs sm:text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-normal">
+            <p className="text-zinc-400 font-mono text-xs sm:text-sm md:text-base max-w-xl mx-auto leading-relaxed font-normal">
               An inter-collegiate national technical fest celebrating innovation, coding, creativity, competition and technology. Accelerate your skills across 13 championship tracks.
             </p>
           </motion.div>
 
-          {/* Bottom Block: Clean High-Contrast Action Buttons */}
+          {/* Bottom Block: Clean Pill Action Buttons (Image Stack) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-col sm:flex-row justify-center items-center gap-3 w-full sm:w-auto px-4 sm:px-0 max-w-xs sm:max-w-none mx-auto w-full pb-2 sm:pb-4"
+            className="flex flex-col items-center gap-3 w-full max-w-xs sm:max-w-sm mx-auto pt-2 pb-2"
           >
-            <Link to="/register" className="btn-primary w-full sm:w-auto text-center gap-2 font-bold shadow-xl py-3.5">
+            {/* Primary Button: Pure White Pill */}
+            <Link
+              to="/register"
+              className="w-full py-3.5 px-6 rounded-2xl sm:rounded-full bg-white text-black font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 hover:bg-zinc-200 transition-all shadow-[0_0_25px_rgba(255,255,255,0.45)] hover:shadow-[0_0_35px_rgba(255,255,255,0.7)] hover:scale-[1.02] active:scale-[0.98]"
+            >
               <span>Get Registered Free</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-black stroke-[2.5]" />
             </Link>
-            <Link to="/events" className="btn-outline w-full sm:w-auto text-center gap-2 font-medium py-3.5">
-              <span className="text-xs">▷</span>
+
+            {/* Secondary Button: Dark Translucent Glass Pill */}
+            <Link
+              to="/events"
+              className="w-full py-3.5 px-6 rounded-2xl sm:rounded-full bg-[#0a0f1d]/90 hover:bg-[#131d38] text-white font-semibold text-sm sm:text-base border border-slate-700/80 hover:border-slate-500 flex items-center justify-center gap-2.5 transition-all shadow-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <span className="text-xs text-zinc-400">▷</span>
               <span>Explore All Events</span>
             </Link>
           </motion.div>

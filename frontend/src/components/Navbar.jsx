@@ -52,24 +52,26 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? 'bg-[#000000]/90 backdrop-blur-md border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.9)] py-3'
           : 'bg-transparent py-5 border-b border-white/5'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          
-          {/* Logo with 3D Monochromatic emblem */}
+
+          {/* Logo with 3D Monochromatic emblem matching screenshot */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <FloatingLogo size={36} />
+            <FloatingLogo size={34} />
             <div className="flex flex-col">
-              <span className="font-cyber font-black tracking-wider text-xl text-white flex items-center gap-1.5">
-                <span className="text-white text-3d-subtle">TECH HABBA</span> <span className="text-black font-sans text-xs px-1.5 py-0.5 rounded bg-white font-bold">2.0</span>
+              <span className="font-cyber font-black tracking-wider text-lg sm:text-xl text-white flex items-center gap-2">
+                <span>TECH HABBA</span>
+                <span className="font-mono text-[10px] sm:text-[11px] px-1.5 py-0.5 rounded border border-white/70 bg-white/10 text-white font-bold tracking-normal">
+                  2.0
+                </span>
               </span>
-              <span className="text-[9px] uppercase tracking-[0.25em] text-zinc-400 font-medium">
-                Acharya Institute of Technology
+              <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.24em] text-zinc-400 font-semibold font-mono">
+                ACHARYA INSTITUTE OF TECHNOLOGY
               </span>
             </div>
           </Link>
@@ -146,14 +148,14 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Mobile hamburger menu */}
+          {/* Mobile hamburger menu matching screenshot */}
           <div className="lg:hidden flex items-center space-x-2">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-zinc-300 hover:text-white bg-white/5 border border-white/10 focus:outline-none"
+              className="p-2.5 rounded-xl text-zinc-200 hover:text-white bg-white/5 hover:bg-white/10 border border-white/20 hover:border-white/40 transition-all shadow-sm focus:outline-none flex items-center justify-center"
               aria-label="Toggle Menu"
             >
-              {isOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
+              {isOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white stroke-[2.2]" />}
             </button>
           </div>
 
