@@ -110,11 +110,11 @@ const Home = () => {
             <AcharyaLogo size={80} />
 
             {/* HackerRing Inspired Precision Status Badge */}
-            <div className="inline-flex max-w-full items-stretch border border-white/20 border-l-2 border-l-white bg-black/90 text-[11px] sm:text-xs font-bold tracking-[0.16em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] rounded-[6px] overflow-hidden backdrop-blur-md">
-              <span className="flex items-center border-r border-white/20 bg-white/10 px-2.5 py-1">
-                <span className="h-1.5 w-1.5 rounded-[1px] bg-white animate-pulse" />
+            <div className="inline-flex max-w-[95vw] sm:max-w-full items-center border border-white/20 border-l-2 border-l-white bg-black/90 text-[9px] sm:text-xs font-bold tracking-[0.05em] sm:tracking-[0.16em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] rounded-[5px] sm:rounded-[6px] overflow-hidden backdrop-blur-md">
+              <span className="flex items-center self-stretch border-r border-white/20 bg-white/10 px-1.5 sm:px-2.5 py-0.5 sm:py-1">
+                <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-[1px] bg-white animate-pulse" />
               </span>
-              <span className="px-3 py-1.5 font-mono uppercase text-zinc-300">
+              <span className="px-2 sm:px-3 py-1 sm:py-1.5 font-mono uppercase text-zinc-300 whitespace-nowrap">
                 Acharya Institute of Technology // 12 - 14 NOV 2026
               </span>
             </div>
