@@ -58,45 +58,37 @@ const AcharyaLogo = ({
     document.addEventListener('mouseleave', handleMouseLeave);
 
     const loop = () => {
-      time += 0.024;
-
-      // Smooth mouse easing
+      // Smooth mouse easing for desktop parallax
       mouse.x += (mouse.targetX - mouse.x) * 0.08;
       mouse.y += (mouse.targetY - mouse.y) * 0.08;
 
-      // 1. OPPOSITE PARALLAX & TILT:
-      // When Big-O moves +X/+Y, Acharya moves -X/-Y
-      const oppX = -mouse.x * 24; // opposite lateral float
-      const oppY = -mouse.y * 18;
-      const oppRotX = mouse.y * 16; // opposite 3D pitch
-      const oppRotY = -mouse.x * 20; // opposite 3D yaw
+      // Clean subtle parallax tilt on desktop
+      const oppX = -mouse.x * 12;
+      const oppY = -mouse.y * 10;
+      const oppRotX = mouse.y * 8;
+      const oppRotY = -mouse.x * 10;
 
       setOffset({ x: oppX, y: oppY });
       setRot({ rx: oppRotX, ry: oppRotY });
 
-      // 2. COUNTER-PHASE OSCILLATION (Opposite of Big-O breathing):
-      // Big-O uses Math.sin(time * 1.5). Acharya uses -Math.sin(time * 1.5)
-      const counterPhase = -Math.sin(time * 1.5);
-      
-      // Base counter-pop scale and Z displacement
-      let targetScale = 1 + counterPhase * 0.12; // shrinks when Big-O swells, swells when Big-O shrinks
-      let targetZ = counterPhase * 25; // pushes back (-Z) when Big-O comes forward, pops up (+Z) when Big-O recedes
+      // Reactive scale and displacement
+      let targetScale = 1.0;
+      let targetZ = 0;
 
-      // 3. REACTIVE OVERRIDE:
-      // If Big-O is currently popped up by cursor proximity, Acharya pops back!
+      // If Big-O is currently popped up by cursor proximity, Acharya reacts
       if (bigOPopping) {
-        targetScale *= 0.82; // pops back!
-        targetZ -= 35;
+        targetScale = 0.88;
+        targetZ = -20;
       }
 
-      // If user hovers over Acharya directly, Acharya pops up forward!
+      // If user hovers over Acharya directly, Acharya pops up forward
       if (isHovered) {
-        targetScale = 1.25;
-        targetZ = 45;
+        targetScale = 1.15;
+        targetZ = 30;
       }
 
-      setScale((prev) => prev + (targetScale - prev) * 0.1);
-      setTransZ((prev) => prev + (targetZ - prev) * 0.1);
+      setScale((prev) => prev + (targetScale - prev) * 0.15);
+      setTransZ((prev) => prev + (targetZ - prev) * 0.15);
 
       animId = requestAnimationFrame(loop);
     };

@@ -92,71 +92,67 @@ const Home = () => {
       {/* ==================================================
           1. HERO SECTION (Black & White 3D Atmosphere)
           ================================================== */}
-      <section className="relative min-h-[92vh] sm:min-h-screen flex flex-col justify-center items-center pt-28 sm:pt-36 pb-10 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative min-h-[100dvh] sm:min-h-screen flex flex-col justify-between items-center pt-28 sm:pt-36 pb-6 sm:pb-10 px-4 sm:px-6 lg:px-8 overflow-hidden">
 
         {/* Soft Monochromatic ambient light */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-white/[0.04] rounded-full blur-[140px] pointer-events-none"></div>
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center justify-center">
+        <div className="relative z-10 max-w-5xl mx-auto text-center flex-1 flex flex-col items-center justify-between w-full py-1 sm:py-4">
 
-          {/* 3D Floating Material Logo (Positioned slightly lower) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-            className="flex flex-col items-center justify-center mt-2 sm:mt-4 mb-4 sm:mb-6"
-          >
-            {/* Counter-Reactive 3D Acharya Logo */}
-            <AcharyaLogo size={80} />
-          </motion.div>
+          {/* Top Block: Logo & 3D Title (Positioned comfortably down) */}
+          <div className="flex flex-col items-center justify-center w-full mt-2 sm:mt-4">
+            {/* 3D Floating Material Logo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7 }}
+              className="flex flex-col items-center justify-center mb-3 sm:mb-5"
+            >
+              <AcharyaLogo size={80} />
+            </motion.div>
 
-          {/* Clean, Seamless 3D Extruded Title */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-          >
-            <Hero3DTitle line1="TECH HABBA" line2="2K26" className="mb-3 sm:mb-4" />
-          </motion.div>
+            {/* Clean, Seamless 3D Extruded Title */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <Hero3DTitle line1="TECH HABBA" line2="2K26" className="mb-2 sm:mb-3" />
+            </motion.div>
+          </div>
 
-          {/* Statement & Subtitle (Clean Cyberpunk Typography) */}
+          {/* Middle Block: Institution, Date & Inter-Collegiate Statement with Generous Gap */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-3 sm:mb-4 px-2"
+            className="max-w-2xl mx-auto px-4 text-center my-auto w-full py-3 sm:py-5"
           >
-            <div className="font-mono text-[11px] sm:text-base md:text-lg tracking-[0.06em] sm:tracking-[0.18em] uppercase text-zinc-300 select-none flex flex-wrap items-center justify-center gap-1 sm:gap-2">
-              <span className="opacity-40">//</span>
-              <span className="text-white font-bold whitespace-nowrap">ACHARYA INSTITUTE OF TECHNOLOGY</span>
-              <span className="opacity-40">//</span>
-              <span className="text-zinc-300 font-semibold whitespace-nowrap">12 - 15 NOV 2026</span>
-              <span className="opacity-40">//</span>
+            {/* Institution & Date Statement */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 text-xs sm:text-base md:text-lg font-mono font-bold tracking-wider uppercase text-zinc-200 select-none mb-4 sm:mb-5">
+              <span className="text-white">ACHARYA INSTITUTE OF TECHNOLOGY</span>
+              <span className="text-zinc-500 hidden sm:inline">//</span>
+              <span className="text-zinc-300 font-semibold">12 – 15 NOV 2026</span>
             </div>
+
+            {/* Clear Separator Space & Inter-Collegiate Statement */}
+            <p className="text-zinc-300 font-sans text-xs sm:text-sm md:text-base leading-relaxed font-normal max-w-xl mx-auto">
+              An intercollegiate national technical fest celebrating technical excellence, hackathons, robotics, and creative design across 13 championship tracks.
+            </p>
           </motion.div>
 
-          {/* Additional statement text */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-zinc-400 font-mono text-xs sm:text-sm md:text-base max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed font-normal"
-          >
-            An inter-collegiate national technical fest celebrating innovation, coding, creativity, competition and technology. Accelerate your skills across 13 championship tracks.
-          </motion.p>
-
-          {/* Clean SaaS Style High-Contrast Action Buttons */}
+          {/* Bottom Block: Clean High-Contrast Action Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-col sm:flex-row justify-center items-center gap-3 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row justify-center items-center gap-3 w-full sm:w-auto px-4 sm:px-0 max-w-xs sm:max-w-none mx-auto w-full pb-2 sm:pb-4"
           >
-            <Link to="/register" className="btn-primary w-full sm:w-auto text-center gap-2 font-bold shadow-xl">
+            <Link to="/register" className="btn-primary w-full sm:w-auto text-center gap-2 font-bold shadow-xl py-3.5">
               <span>Get Registered Free</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link to="/events" className="btn-outline w-full sm:w-auto text-center gap-2 font-medium">
+            <Link to="/events" className="btn-outline w-full sm:w-auto text-center gap-2 font-medium py-3.5">
               <span className="text-xs">▷</span>
               <span>Explore All Events</span>
             </Link>

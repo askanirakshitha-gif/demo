@@ -434,9 +434,10 @@ const ParticleBackground = ({
       // -----------------------------------------------------------------------
       // 2. BACKGROUND "THE BIG O" EMBLEM (COUNTER-REACTIVE 3D POP DYNAMICS)
       // -----------------------------------------------------------------------
-      const masterSize = Math.min(width, height) * (width < 768 ? 0.22 : 0.24);
+      const isMobile = width < 768;
+      const masterSize = Math.min(width, height) * (isMobile ? 0.18 : 0.24);
       const masterCenterX = centerX - camShiftX * 0.42;
-      const masterCenterY = centerY - 20 - camShiftY * 0.42;
+      const masterCenterY = centerY - (isMobile ? 0 : 20) - camShiftY * 0.42;
 
       // Check if cursor is near Big-O to trigger Big-O pop-up
       let bigOPopping = false;
@@ -445,7 +446,7 @@ const ParticleBackground = ({
         const distToCenter = Math.hypot(mouse.x - masterCenterX, mouse.y - masterCenterY);
         if (distToCenter < 230) {
           const prox = Math.pow(1 - distToCenter / 230, 2);
-          cursorPop = prox * 0.42; // Big-O pops up!
+          cursorPop = prox * 0.35; // Big-O pops up!
           bigOPopping = true;
         }
       }
@@ -455,14 +456,14 @@ const ParticleBackground = ({
         new CustomEvent('bigo-pop-event', { detail: { popping: bigOPopping } })
       );
 
-      // Natural breathing pulse (time * 1.5):
-      const naturalBloat = 1 + 0.12 * Math.sin(time * 1.5);
+      // Natural breathing pulse
+      const naturalBloat = 1 + (isMobile ? 0.04 : 0.08) * Math.sin(time * 1.2);
 
       // Counter-pop: if Acharya is popping forward, Big-O pops back!
-      const acharyaRecede = acharyaPopping ? 0.25 : 0;
+      const acharyaRecede = acharyaPopping ? 0.2 : 0;
 
       const totalBloat = Math.max(0.65, naturalBloat + cursorPop - acharyaRecede);
-      const masterOpacity = Math.max(0.12, Math.min(0.65, 0.32 + cursorPop * 0.35 - (acharyaPopping ? 0.14 : 0)));
+      const masterOpacity = isMobile ? 0.10 : Math.max(0.08, Math.min(0.4, 0.20 + cursorPop * 0.25 - (acharyaPopping ? 0.1 : 0)));
 
       const masterRx = Math.sin(time * 0.3) * 0.16 + camTiltX * 1.15;
       const masterRy = Math.cos(time * 0.25) * 0.22 + camTiltY * 1.15;
