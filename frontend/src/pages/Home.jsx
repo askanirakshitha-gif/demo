@@ -92,31 +92,31 @@ const Home = () => {
       {/* ==================================================
           1. HERO SECTION (Black & White 3D Atmosphere)
           ================================================== */}
-      <section className="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative min-h-[92vh] sm:min-h-screen flex flex-col justify-center items-center pt-28 sm:pt-36 pb-10 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
 
         {/* Soft Monochromatic ambient light */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-white/[0.04] rounded-full blur-[140px] pointer-events-none"></div>
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center justify-center">
 
-          {/* 3D Floating Material Logo */}
+          {/* 3D Floating Material Logo (Positioned slightly lower) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
-            className="flex flex-col items-center justify-center mb-6"
+            className="flex flex-col items-center justify-center mt-2 sm:mt-4 mb-4 sm:mb-6"
           >
             {/* Counter-Reactive 3D Acharya Logo */}
             <AcharyaLogo size={80} />
           </motion.div>
 
-          {/* Clean, Seamless 3D Extruded Title (Zero Boxes, Pure Typography) */}
+          {/* Clean, Seamless 3D Extruded Title */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            <Hero3DTitle line1="TECH HABBA" line2="2K26" className="mb-4" />
+            <Hero3DTitle line1="TECH HABBA" line2="2K26" className="mb-3 sm:mb-4" />
           </motion.div>
 
           {/* Statement & Subtitle (Clean Cyberpunk Typography) */}
@@ -124,7 +124,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-4 px-2"
+            className="mb-3 sm:mb-4 px-2"
           >
             <div className="font-mono text-[11px] sm:text-base md:text-lg tracking-[0.06em] sm:tracking-[0.18em] uppercase text-zinc-300 select-none flex flex-wrap items-center justify-center gap-1 sm:gap-2">
               <span className="opacity-40">//</span>
@@ -140,7 +140,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-zinc-400 font-mono text-xs sm:text-sm md:text-base max-w-2xl mx-auto mb-10 leading-relaxed font-normal"
+            className="text-zinc-400 font-mono text-xs sm:text-sm md:text-base max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed font-normal"
           >
             An inter-collegiate national technical fest celebrating innovation, coding, creativity, competition and technology. Accelerate your skills across 13 championship tracks.
           </motion.p>
@@ -150,7 +150,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-col sm:flex-row justify-center items-center gap-3.5 mb-12"
+            className="flex flex-col sm:flex-row justify-center items-center gap-3 w-full sm:w-auto"
           >
             <Link to="/register" className="btn-primary w-full sm:w-auto text-center gap-2 font-bold shadow-xl">
               <span>Get Registered Free</span>
@@ -162,14 +162,19 @@ const Home = () => {
             </Link>
           </motion.div>
 
-          {/* ==================================================
-              2. COUNTDOWN TIMER
-              ================================================== */}
+        </div>
+      </section>
+
+      {/* ==================================================
+          2. COUNTDOWN TIMER SECTION (Visible on Scroll)
+          ================================================== */}
+      <section className="relative z-10 py-12 sm:py-16 border-t border-white/10 bg-black/60 backdrop-blur-md">
+        <div className="max-w-5xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="pt-4"
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
             <div className="flex items-center justify-center gap-2 text-xs font-mono font-bold tracking-widest text-zinc-300 uppercase mb-2">
               <Clock className="w-3.5 h-3.5 text-white" />
@@ -177,7 +182,6 @@ const Home = () => {
             </div>
             <Countdown />
           </motion.div>
-
         </div>
       </section>
 
