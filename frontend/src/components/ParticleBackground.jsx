@@ -357,19 +357,20 @@ const ParticleBackground = ({
         pt.x += pt.vx;
         pt.y += pt.vy;
 
-        // Pure Monochrome White / Platinum Dynamic Glow
         let alpha = 0.12;
         let radius = baseRadius;
+        let fillStyle = `rgba(255, 255, 255, ${alpha})`;
 
         if (dist < gravityRadius) {
           const bloom = Math.pow(1 - dist / gravityRadius, 1.2);
           alpha = 0.18 + bloom * 0.72;
           radius = baseRadius + bloom * 1.6;
+          fillStyle = `rgba(255, 255, 255, ${alpha})`;
         }
 
         ctx.beginPath();
         ctx.arc(pt.x, pt.y, radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+        ctx.fillStyle = fillStyle;
         ctx.fill();
       }
 
@@ -546,8 +547,8 @@ const ParticleBackground = ({
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-black">
-      {/* 1. Deep Inky Black Gradient Base */}
-      <div className="absolute inset-0 bg-black bg-workbench-gradient" />
+      {/* 1. Deep Black Gradient Base */}
+      <div className="absolute inset-0 bg-workbench-gradient" />
 
       {/* 2. Precision 32px Matrix Grid Overlay */}
       <div className="absolute inset-0 bg-grid-overlay opacity-60" />

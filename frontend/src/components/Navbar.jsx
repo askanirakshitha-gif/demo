@@ -66,7 +66,7 @@ const Navbar = () => {
             <FloatingLogo size={36} />
             <div className="flex flex-col">
               <span className="font-cyber font-black tracking-wider text-xl text-white flex items-center gap-1.5">
-                <span className="text-white text-3d-subtle">TECH HABBA</span> <span className="text-black font-sans text-xs px-1.5 py-0.5 rounded bg-white font-bold">2K26</span>
+                <span className="text-white text-3d-subtle">TECH HABBA</span> <span className="text-black font-sans text-xs px-1.5 py-0.5 rounded bg-white font-bold">2.0</span>
               </span>
               <span className="text-[9px] uppercase tracking-[0.25em] text-zinc-400 font-medium">
                 Acharya Institute of Technology
@@ -148,12 +148,6 @@ const Navbar = () => {
 
           {/* Mobile hamburger menu */}
           <div className="lg:hidden flex items-center space-x-2">
-            <Link
-              to="/register"
-              className="md:hidden px-3 py-1.5 rounded text-xs font-bold bg-white text-black shadow-sm font-cyber"
-            >
-              REGISTER
-            </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg text-zinc-300 hover:text-white bg-white/5 border border-white/10 focus:outline-none"

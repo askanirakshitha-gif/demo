@@ -9,17 +9,17 @@
   --font-mono: 'Fira Code', monospace;
 
   --color-black-pure: #000000;
-  --color-dark-950: #040404;
-  --color-dark-900: #090909;
-  --color-dark-850: #111111;
-  --color-dark-800: #18181b;
-  --color-dark-700: #27272a;
-  --color-dark-600: #3f3f46;
+  --color-dark-950: #030712;
+  --color-dark-900: #0f172a;
+  --color-dark-850: #1e293b;
+  --color-dark-800: #334155;
+  --color-dark-700: #1e3a8a;
+  --color-dark-600: #2563eb;
 
   --color-neon-white: #ffffff;
-  --color-silver-100: #f4f4f5;
-  --color-silver-300: #d4d4d8;
-  --color-silver-500: #71717a;
+  --color-silver-100: #f1f5f9;
+  --color-silver-300: #cbd5e1;
+  --color-silver-500: #64748b;
 }
 
 :root {
@@ -27,8 +27,8 @@
 }
 
 body {
-  background-color: #000000;
-  color: #f4f4f5;
+  background-color: #030712;
+  color: #ffffff;
   font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
   overflow-x: hidden;
 }
@@ -94,13 +94,13 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 255, 255, 0.35);
 }
 
-/* Glassmorphism Black & White */
+/* Glassmorphism Space Blue */
 .glass-card {
-  background: rgba(14, 14, 16, 0.75);
+  background: rgba(5, 11, 24, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.9);
 }
 
 .glass-card-hover {
@@ -132,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background: #f4f4f5;
+  background: #e4e4e7;
   box-shadow: 0 6px 30px rgba(255, 255, 255, 0.6);
   transform: translateY(-2px);
 }
@@ -144,9 +144,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.8rem 1.85rem;
   font-weight: 600;
   border-radius: 0.6rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: #ffffff;
-  background: rgba(24, 24, 27, 0.8);
+  background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   transition: all 0.25s ease;
@@ -156,10 +156,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-outline:hover {
-  background: rgba(39, 39, 42, 0.95);
-  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.8);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* Custom Scrollbar */
@@ -167,20 +167,22 @@ h1, h2, h3, h4, h5, h6 {
   width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #030712;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #1e293b;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #71717a;
+  background: #334155;
 }
 
-/* Deep Inky Black Background System */
+/* Deep Space Blue Background System */
 .bg-workbench-gradient {
-  background: #000000;
-  background-image: linear-gradient(180deg, #000000 0%, #020202 50%, #050505 100%);
+  background-color: #030712;
+  background-image: 
+    radial-gradient(ellipse at bottom, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+    linear-gradient(180deg, #030712 0%, #0a0a0a 40%, #000000 100%);
 }
 
 .bg-grid-overlay {
