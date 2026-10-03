@@ -2,12 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 /**
- * Hero3DTitle - Pure Code Thick Layered 3D Typography for TECH HABBA 2K26
- * - Heavy, thick sculpted 3D layered letterforms (Pure text, NO picture/image)
- * - Multi-slice depth extrusion gradient from chrome/white to deep obsidian
- * - Dynamic mouse & gyro parallax with responsive directional light offset
- * - Zero square boxes, pure continuous 3D typographic sculpture
- * - 100% Black & White / Monochromatic theme preservation
+ * Hero3DTitle - Official Heavy 3D Extruded Sculpture for TECH HABBA 2K26
+ * - Heavy, ultra-bold sculpted 3D letterforms matching the official banner reference
+ * - Multi-slice depth extrusion gradient from pure white to polished chrome and deep black
+ * - Crisp directional bevels and deep cast shadow
+ * - Pure code & typography (NO static picture)
  */
 const Hero3DTitle = ({
   line1 = 'TECH HABBA',
@@ -16,7 +15,7 @@ const Hero3DTitle = ({
 }) => {
   const containerRef = useRef(null);
   const [rot, setRot] = useState({ rx: 0, ry: 0 });
-  const [shadowOffset, setShadowOffset] = useState({ x: 0, y: 8 });
+  const [shadowOffset, setShadowOffset] = useState({ x: 0, y: 4 });
 
   useEffect(() => {
     let animId;
@@ -47,14 +46,14 @@ const Hero3DTitle = ({
       currentY += (targetY - currentY) * 0.08;
 
       setRot({
-        rx: -currentY * 15,
-        ry: currentX * 18,
+        rx: -currentY * 10,
+        ry: currentX * 12,
       });
 
-      // Directional extrusion depth & light offset
+      // Subtle directional extrusion shift while keeping solid base
       setShadowOffset({
-        x: -currentX * 8,
-        y: Math.max(5, -currentY * 6 + 6),
+        x: -currentX * 4,
+        y: Math.max(3, -currentY * 3 + 4),
       });
 
       animId = requestAnimationFrame(loop);
@@ -69,53 +68,31 @@ const Hero3DTitle = ({
     };
   }, []);
 
-  // Generates rich, thick, multi-layered 3D text extrusion
-  const getThickLayered3DShadow = (isAccent = false) => {
-    const sx = shadowOffset.x;
-    const sy = shadowOffset.y;
+  // Generates official thick, stepped 3D text extrusion matching reference image
+  const getOfficial3DShadow = () => {
+    const sx = shadowOffset.x * 0.3;
+    const sy = shadowOffset.y * 0.3;
 
-    if (isAccent) {
-      // Bold highlight extrusion for 2K26
-      return `
-        0 1px 0 #ffffff,
-        ${sx * 0.05}px ${sy * 0.05 + 1}px 0 #f8fafc,
-        ${sx * 0.10}px ${sy * 0.10 + 2}px 0 #f1f5f9,
-        ${sx * 0.16}px ${sy * 0.16 + 3}px 0 #e2e8f0,
-        ${sx * 0.23}px ${sy * 0.23 + 4}px 0 #cbd5e1,
-        ${sx * 0.31}px ${sy * 0.31 + 5}px 0 #94a3b8,
-        ${sx * 0.40}px ${sy * 0.40 + 6}px 0 #64748b,
-        ${sx * 0.50}px ${sy * 0.50 + 7}px 0 #475569,
-        ${sx * 0.62}px ${sy * 0.62 + 8}px 0 #334155,
-        ${sx * 0.75}px ${sy * 0.75 + 9}px 0 #1e293b,
-        ${sx * 0.90}px ${sy * 0.90 + 10}px 0 #0f172a,
-        ${sx * 1.06}px ${sy * 1.06 + 12}px 0 #020617,
-        ${sx * 1.25}px ${sy * 1.25 + 14}px 0 #000000,
-        ${sx * 1.45}px ${sy * 1.45 + 16}px 0 #000000,
-        0 20px 40px rgba(0, 0, 0, 0.98),
-        0 35px 70px rgba(0, 0, 0, 0.95),
-        0 0 50px rgba(255, 255, 255, 0.35)
-      `;
-    }
-
-    // Heavy layered extrusion for TECH HABBA
     return `
       0 1px 0 #ffffff,
-      ${sx * 0.05}px ${sy * 0.05 + 1}px 0 #fafafa,
-      ${sx * 0.10}px ${sy * 0.10 + 2}px 0 #f4f4f5,
-      ${sx * 0.16}px ${sy * 0.16 + 3}px 0 #e4e4e7,
-      ${sx * 0.23}px ${sy * 0.23 + 4}px 0 #d4d4d8,
-      ${sx * 0.31}px ${sy * 0.31 + 5}px 0 #a1a1aa,
-      ${sx * 0.40}px ${sy * 0.40 + 6}px 0 #71717a,
-      ${sx * 0.50}px ${sy * 0.50 + 7}px 0 #52525b,
-      ${sx * 0.62}px ${sy * 0.62 + 8}px 0 #3f3f46,
-      ${sx * 0.75}px ${sy * 0.75 + 9}px 0 #27272a,
-      ${sx * 0.90}px ${sy * 0.90 + 10}px 0 #18181b,
-      ${sx * 1.06}px ${sy * 1.06 + 12}px 0 #09090b,
-      ${sx * 1.25}px ${sy * 1.25 + 14}px 0 #000000,
-      ${sx * 1.45}px ${sy * 1.45 + 16}px 0 #000000,
-      0 20px 40px rgba(0, 0, 0, 0.98),
-      0 35px 70px rgba(0, 0, 0, 0.95),
-      0 0 45px rgba(255, 255, 255, 0.25)
+      ${sx * 0.1 + 0.4}px ${sy * 0.1 + 1.2}px 0 #ffffff,
+      ${sx * 0.2 + 0.8}px ${sy * 0.2 + 2.2}px 0 #f8fafc,
+      ${sx * 0.3 + 1.2}px ${sy * 0.3 + 3.2}px 0 #f1f5f9,
+      ${sx * 0.4 + 1.6}px ${sy * 0.4 + 4.2}px 0 #e2e8f0,
+      ${sx * 0.5 + 2.0}px ${sy * 0.5 + 5.2}px 0 #cbd5e1,
+      ${sx * 0.6 + 2.4}px ${sy * 0.6 + 6.2}px 0 #94a3b8,
+      ${sx * 0.7 + 2.8}px ${sy * 0.7 + 7.2}px 0 #64748b,
+      ${sx * 0.8 + 3.2}px ${sy * 0.8 + 8.2}px 0 #475569,
+      ${sx * 0.9 + 3.6}px ${sy * 0.9 + 9.2}px 0 #334155,
+      ${sx * 1.0 + 4.0}px ${sy * 1.0 + 10.2}px 0 #1e293b,
+      ${sx * 1.1 + 4.4}px ${sy * 1.1 + 11.2}px 0 #0f172a,
+      ${sx * 1.2 + 4.8}px ${sy * 1.2 + 12.2}px 0 #050b14,
+      ${sx * 1.3 + 5.2}px ${sy * 1.3 + 13.2}px 0 #000000,
+      ${sx * 1.4 + 5.6}px ${sy * 1.4 + 14.2}px 0 #000000,
+      ${sx * 1.5 + 6.0}px ${sy * 1.5 + 15.2}px 0 #000000,
+      0 18px 32px rgba(0, 0, 0, 0.98),
+      0 32px 65px rgba(0, 0, 0, 0.92),
+      0 0 35px rgba(255, 255, 255, 0.25)
     `;
   };
 
@@ -124,15 +101,15 @@ const Hero3DTitle = ({
       ref={containerRef}
       className={`relative select-none perspective-[1200px] flex flex-col items-center justify-center ${className}`}
     >
-      {/* Ambient Depth Glow directly behind typography */}
+      {/* Subtle depth ambient backlight directly behind typography */}
       <div
         className="absolute inset-0 -z-10 pointer-events-none flex items-center justify-center"
         style={{
-          transform: `rotateX(${rot.rx * 0.3}deg) rotateY(${rot.ry * 0.3}deg)`,
+          transform: `rotateX(${rot.rx * 0.2}deg) rotateY(${rot.ry * 0.2}deg)`,
           transition: 'transform 0.1s ease-out',
         }}
       >
-        <div className="w-[90%] h-[80%] bg-radial from-white/[0.12] via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
+        <div className="w-[85%] h-[75%] bg-radial from-white/[0.10] via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
       </div>
 
       {/* Main 3D Title Stage */}
@@ -142,61 +119,65 @@ const Hero3DTitle = ({
           transformStyle: 'preserve-3d',
           transition: 'transform 0.12s cubic-bezier(0.2, 0.8, 0.2, 1)',
         }}
-        className="relative z-10 flex flex-col items-center justify-center text-center font-display"
+        className="relative z-10 flex flex-col items-center justify-center text-center"
       >
-        {/* LINE 1: TECH HABBA (Thick Layered 3D Extruded Typography) */}
+        {/* LINE 1: TECH HABBA (Official Bold 3D Extruded Block Typography) */}
         <motion.div
           animate={{
-            y: [0, -6, 0],
+            y: [0, -5, 0],
           }}
           transition={{
-            duration: 4.5,
+            duration: 5,
             repeat: Infinity,
             ease: 'easeInOut',
           }}
           style={{
             transformStyle: 'preserve-3d',
-            textShadow: getThickLayered3DShadow(false),
+            textShadow: getOfficial3DShadow(),
+            fontFamily: "'Outfit', 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif",
+            fontWeight: 900,
           }}
           className="
-            font-black tracking-tight leading-none select-none text-white
-            text-5xl sm:text-7xl md:text-8xl lg:text-9xl
-            filter drop-shadow-[0_12px_30px_rgba(0,0,0,0.9)]
+            tracking-[-0.02em] leading-none select-none text-white uppercase
+            text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] xl:text-[8.5rem]
+            filter drop-shadow-[0_12px_28px_rgba(0,0,0,0.95)]
           "
         >
           {line1}
         </motion.div>
 
-        {/* LINE 2: 2K26 (Thick Layered 3D Extruded Typography) */}
+        {/* LINE 2: 2K26 (Official Bold 3D Extruded Block Typography) */}
         <motion.div
           animate={{
-            y: [0, -7, 0],
+            y: [0, -6, 0],
           }}
           transition={{
-            duration: 4.8,
+            duration: 5.2,
             repeat: Infinity,
             ease: 'easeInOut',
-            delay: 0.2,
+            delay: 0.15,
           }}
           style={{
             transformStyle: 'preserve-3d',
-            textShadow: getThickLayered3DShadow(true),
+            textShadow: getOfficial3DShadow(),
+            fontFamily: "'Outfit', 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif",
+            fontWeight: 900,
           }}
           className="
-            font-black tracking-wider leading-none select-none text-white
-            text-5xl sm:text-7xl md:text-8xl lg:text-9xl
-            mt-2 sm:mt-3
-            filter drop-shadow-[0_14px_35px_rgba(0,0,0,0.95)]
+            tracking-[0.04em] leading-none select-none text-white uppercase
+            text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] xl:text-[8.5rem]
+            mt-2 sm:mt-4
+            filter drop-shadow-[0_14px_32px_rgba(0,0,0,0.98)]
           "
         >
           {line2}
         </motion.div>
 
-        {/* Thick 3D Floor Contact Shadow */}
+        {/* Realistic 3D Ground Contact Shadow */}
         <div
-          className="w-3/4 h-4 mt-6 bg-white/10 rounded-full blur-md opacity-35 mx-auto pointer-events-none"
+          className="w-2/3 h-4 mt-6 bg-white/10 rounded-full blur-md opacity-30 mx-auto pointer-events-none"
           style={{
-            transform: `rotateX(85deg) translateZ(-35px) scale(${1 + Math.abs(rot.ry) * 0.03})`,
+            transform: `rotateX(85deg) translateZ(-30px) scale(${1 + Math.abs(rot.ry) * 0.02})`,
           }}
         />
       </motion.div>
@@ -205,3 +186,4 @@ const Hero3DTitle = ({
 };
 
 export default Hero3DTitle;
+
