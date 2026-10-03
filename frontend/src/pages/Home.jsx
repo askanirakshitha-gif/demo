@@ -111,17 +111,17 @@ const Home = () => {
               <AcharyaLogo size={80} />
             </motion.div>
 
-            {/* Clean, Seamless 3D Extruded Title */}
+            {/* Clean, Seamless 3-Tier Poster Title */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <Hero3DTitle line1="TECH HABBA" line2="2K26" className="mb-2 sm:mb-3" />
+              <Hero3DTitle line1="ACHARYA" line2="TECH" line3="HABBA 2026" className="mb-3 sm:mb-4" />
             </motion.div>
           </div>
 
-          {/* Middle Block: Institution, Date & Inter-Collegiate Statement with Generous Gap */}
+          {/* Middle Block: Institution, Date & Inter-Collegiate Statement */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -129,15 +129,17 @@ const Home = () => {
             className="max-w-2xl mx-auto px-4 text-center my-auto w-full py-3 sm:py-5"
           >
             {/* Institution & Date Statement */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 text-xs sm:text-base md:text-lg font-mono font-bold tracking-wider uppercase text-zinc-200 select-none mb-4 sm:mb-5">
-              <span className="text-white">ACHARYA INSTITUTE OF TECHNOLOGY</span>
-              <span className="text-zinc-500 hidden sm:inline">//</span>
-              <span className="text-zinc-300 font-semibold">12 – 15 NOV 2026</span>
+            <div className="font-mono text-xs sm:text-base md:text-lg tracking-[0.08em] sm:tracking-[0.16em] uppercase text-zinc-300 select-none flex flex-wrap items-center justify-center gap-1 sm:gap-2 mb-3 sm:mb-4">
+              <span className="opacity-40">//</span>
+              <span className="text-white font-bold whitespace-nowrap">ACHARYA INSTITUTE OF TECHNOLOGY</span>
+              <span className="opacity-40">//</span>
+              <span className="text-zinc-300 font-semibold whitespace-nowrap">12 - 15 NOV 2026</span>
+              <span className="opacity-40">//</span>
             </div>
 
-            {/* Clear Separator Space & Inter-Collegiate Statement */}
-            <p className="text-zinc-300 font-sans text-xs sm:text-sm md:text-base leading-relaxed font-normal max-w-xl mx-auto">
-              An intercollegiate national technical fest celebrating technical excellence, hackathons, robotics, and creative design across 13 championship tracks.
+            {/* Inter-Collegiate Statement */}
+            <p className="text-zinc-400 font-mono text-xs sm:text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-normal">
+              An inter-collegiate national technical fest celebrating innovation, coding, creativity, competition and technology. Accelerate your skills across 13 championship tracks.
             </p>
           </motion.div>
 
@@ -565,8 +567,8 @@ const Home = () => {
                   key={cat}
                   onClick={() => setActiveTab(cat)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${activeTab === cat
-                      ? 'bg-white text-black font-bold shadow-[0_0_15px_rgba(255,255,255,0.4)]'
-                      : 'bg-zinc-900 text-zinc-400 hover:text-white border border-white/10'
+                    ? 'bg-white text-black font-bold shadow-[0_0_15px_rgba(255,255,255,0.4)]'
+                    : 'bg-zinc-900 text-zinc-400 hover:text-white border border-white/10'
                     }`}
                 >
                   {cat}

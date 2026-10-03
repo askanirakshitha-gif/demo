@@ -3,10 +3,8 @@ import { motion } from 'framer-motion';
 
 /**
  * AcharyaLogo - Interactive Counter-Reactive 3D Emblem
- * - Synchronized in opposite phase with the background Big-O logo:
- *   When Big-O pops up, Acharya pops back (recedes/shrinks in Z-space), and vice-versa.
- * - Parallax movement in the opposite direction of mouse and Big-O.
- * - Interactive hover/proximity pop that pushes Big-O back in the background.
+ * - Centered, stable, and crisp on all screen sizes
+ * - Parallax mouse movement on desktop
  */
 const AcharyaLogo = ({
   size = 80,
@@ -22,7 +20,6 @@ const AcharyaLogo = ({
 
   useEffect(() => {
     let animId;
-    let time = 0;
     let mouse = { x: 0, y: 0, targetX: 0, targetY: 0, active: false };
 
     // Listen to Big-O pop status from background
@@ -38,15 +35,6 @@ const AcharyaLogo = ({
       mouse.active = true;
     };
 
-    const handleTouchMove = (e) => {
-      if (e.touches && e.touches[0]) {
-        const { innerWidth, innerHeight } = window;
-        mouse.targetX = (e.touches[0].clientX / innerWidth - 0.5) * 2;
-        mouse.targetY = (e.touches[0].clientY / innerHeight - 0.5) * 2;
-        mouse.active = true;
-      }
-    };
-
     const handleMouseLeave = () => {
       mouse.active = false;
       mouse.targetX = 0;
@@ -54,7 +42,6 @@ const AcharyaLogo = ({
     };
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    window.addEventListener('touchmove', handleTouchMove, { passive: true });
     document.addEventListener('mouseleave', handleMouseLeave);
 
     const loop = () => {
@@ -63,8 +50,8 @@ const AcharyaLogo = ({
       mouse.y += (mouse.targetY - mouse.y) * 0.08;
 
       // Clean subtle parallax tilt on desktop
-      const oppX = -mouse.x * 12;
-      const oppY = -mouse.y * 10;
+      const oppX = -mouse.x * 10;
+      const oppY = -mouse.y * 8;
       const oppRotX = mouse.y * 8;
       const oppRotY = -mouse.x * 10;
 
@@ -98,7 +85,6 @@ const AcharyaLogo = ({
     return () => {
       window.removeEventListener('bigo-pop-event', handleBigOPop);
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchmove', handleTouchMove);
       document.removeEventListener('mouseleave', handleMouseLeave);
       cancelAnimationFrame(animId);
     };
@@ -124,7 +110,7 @@ const AcharyaLogo = ({
       ref={containerRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative inline-flex items-center justify-center cursor-pointer select-none perspective-[800px] mb-4 ${className}`}
+      className={`relative inline-flex items-center justify-center cursor-pointer select-none perspective-[800px] mb-2 ${className}`}
       style={{
         transform: `translate3d(${offset.x}px, ${offset.y}px, 0)`,
         transition: 'transform 0.1s ease-out',
@@ -137,7 +123,7 @@ const AcharyaLogo = ({
         }}
         className="relative flex items-center justify-center"
       >
-        {/* Dynamic Specular Floor Glow (brightens when popped up, fades when popped back) */}
+        {/* Dynamic Specular Floor Glow */}
         <div
           className="absolute -bottom-3 w-4/5 h-3 bg-white/20 rounded-full blur-md pointer-events-none transition-opacity duration-200"
           style={{
@@ -146,7 +132,7 @@ const AcharyaLogo = ({
           }}
         />
 
-        {/* Acharya Official Logo on Black Background */}
+        {/* Acharya Official Logo */}
         <img
           src="/acharya-logo.png"
           alt="Acharya Institute of Technology Logo"
